@@ -1,13 +1,15 @@
 <html lang="en">
 <body>
-
 <script>
-    // Get the current date and time in raw format
+    // Get the current date in UTC
     var currentDate = new Date();
 
-    // Display the raw date in the body of the HTML document
-    document.body.innerHTML += "" + currentDate
-</script>
+    // Format the date as "yy-mm-dd"
+    var formattedDate = currentDate.getUTCFullYear().toString().substr(-2) + '-' +
+                        ('0' + (currentDate.getUTCMonth() + 1)).slice(-2) + '-' +
+                        ('0' + currentDate.getUTCDate()).slice(-2);
 
+    document.body.innerHTML += formattedDate;
+</script>
 </body>
 </html>
